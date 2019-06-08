@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apk add --no-cache make gcc musl-dev linux-headers git
 
-ADD ./quorum /go-ethereum
+ADD . /go-ethereum
 RUN cd /go-ethereum && make geth bootnode
 
 #############################################################
