@@ -1,11 +1,11 @@
-FROM golang:1.11-alpine as builder
+FROM golang:1.13.4-alpine3.10 as builder
 
 LABEL company="Pharos Production Inc."
-LABEL version="2.2.3"
+LABEL version="2.3.0"
 
 ENV LANG=C.UTF-8 \
-  REFRESHED_AT=2019-08-07-1
-ENV DEBIAN_FRONTEND noninteractive
+  REFRESHED_AT=2019-11-26-1 \
+  DEBIAN_FRONTEND=noninteractive
 
 RUN apk add --no-cache make gcc musl-dev linux-headers git
 
@@ -14,14 +14,14 @@ RUN cd /go-ethereum && make geth bootnode
 
 #############################################################
 
-FROM alpine:3.9.4
+FROM alpine:3.10
 
 LABEL company="Pharos Production Inc."
-LABEL version="2.2.3"
+LABEL version="2.3.0"
 
 ENV LANG=C.UTF-8 \
-  REFRESHED_AT=2019-08-07-1
-ENV DEBIAN_FRONTEND noninteractive
+  REFRESHED_AT=2019-11-26-1 \
+  DEBIAN_FRONTEND=noninteractive
 
 RUN apk add --no-cache \
   ca-certificates \
