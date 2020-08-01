@@ -14,7 +14,7 @@ RUN cd /go-ethereum && make geth bootnode
 
 #############################################################
 
-FROM alpine:3.10
+FROM alpine:3.12.0
 
 LABEL company="Pharos Production Inc."
 LABEL version="2.3.0"
@@ -34,5 +34,7 @@ COPY --from=builder /go-ethereum/build/bin/bootnode /usr/local/bin/
 
 COPY ./scripts/quorum.sh /opt/blockchain/quorum/
 RUN chmod +x /opt/blockchain/quorum/quorum.sh
+
+EXPOSE 8545 8546 8547 30303 30303/udp
 
 CMD [ "/bin/bash" ]

@@ -21,11 +21,18 @@
   "config": {
     "homesteadBlock": 0,
     "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
     "chainId": 10,
     "eip150Block": 0,
     "eip155Block": 0,
     "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
     "eip158Block": 0,
+    "maxCodeSizeConfig": [
+      {
+        "block": 0,
+        "size": 35
+      }
+    ],
     "isQuorum": true
   },
   "difficulty": "0x0",

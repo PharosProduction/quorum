@@ -35,6 +35,6 @@ PRIVATE_CONFIG=ignore nohup geth --identity node$NODE_ID --verbosity 5 --network
   --datadir /opt/blockchain/quorum/qdata \
   --nodiscover --permissioned \
   --raft --raftport 50400 --port 21000 \
-  --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --wsapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft,rpc \
-  --rpc --rpcaddr 0.0.0.0 --rpcport 8545 --rpccorsdomain "*" --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft,rpc \
+  --ws --wsaddr 0.0.0.0 --wsport 8546 --wsorigins "*" --wsapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft,rpc,quorumPermission \
+  --rpc --rpcaddr 0.0.0.0 --rpcport 8545 --rpccorsdomain "*" --rpcapi admin,db,eth,debug,miner,net,shh,txpool,personal,web3,quorum,raft,rpc,quorumPermission \
   --emitcheckpoints --unlock 0 --password /opt/blockchain/quorum/passwords 2> /opt/blockchain/quorum/logs/geth.log
